@@ -15,7 +15,7 @@ lib/queue-from-async.js: node_modules/.install
 	node_modules/.bin/browserify node_modules/queue-from-async/index.js --standalone async.queue -o $@
 
 dist/backbone-github.js: index.js node_modules/.install
-	node_modules/.bin/browserify $< -u backbone -u underscore -u queue-from-async -o $@
+	node_modules/.bin/browserify $< --standalone -u backbone -u underscore -u queue-from-async -o $@
 
 dist/backbone-github.min.js: dist/backbone-github.js node_modules/.install
 	node_modules/.bin/uglifyjs $< -c -m -o $@
